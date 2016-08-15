@@ -1,8 +1,10 @@
 {
-  "name": "parsely",
+  "name": "parseley",
   "version": "0.0.1",
   "description": "A parser combinater library written by typescript",
-  "main": "index.js",
+  "bin": {
+    "parseley":"build/index.js"
+  },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-prettydiff": "^1.0.1",
