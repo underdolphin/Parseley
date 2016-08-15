@@ -1,0 +1,36 @@
+{
+  "name": "parsely",
+  "version": "0.0.1",
+  "description": "A parser combinater library written by typescript",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-prettydiff": "^1.0.1",
+    "gulp-typescript": "^2.13.6",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-plumber": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-prettydiff": "^1.0.1",
+    "gulp-typescript": "^2.13.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/underdolphin/Parsely.git"
+  },
+  "keywords": [
+    "parse"
+  ],
+  "author": "underdolphin (masato sueda)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/underdolphin/Parsely/issues"
+  },
+  "homepage": "https://github.com/underdolphin/Parsely#readme"
+}
