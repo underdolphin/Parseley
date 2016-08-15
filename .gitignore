@@ -37,7 +37,7 @@ jspm_packages
 typings
 
 # Build Registory
-build
+build/**/*.*
 
 # gitkeep
 !.gitkeep
