@@ -23,16 +23,20 @@
   },
   "homepage": "https://github.com/underdolphin/Parsely#readme",
   "devDependencies": {
+    "@types/browserify": "^12.0.30",
     "@types/gulp": "^3.8.32",
     "@types/gulp-nodemon": "0.0.29",
     "@types/gulp-plumber": "0.0.29",
     "@types/gulp-typescript": "0.0.32",
+    "@types/gulp-uglify": "0.0.29",
+    "browserify": "^13.1.1",
     "gulp": "^3.9.1",
     "gulp-mocha": "^3.0.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-plumber": "^1.1.0",
     "gulp-prettydiff": "^1.0.1",
     "gulp-typescript": "^3.1.3",
+    "gulp-uglify": "^2.0.0",
     "mocha": "^3.2.0",
     "typescript": "^2.0.10"
   }
