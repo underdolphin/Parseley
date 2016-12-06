@@ -24,6 +24,7 @@
   "homepage": "https://github.com/underdolphin/Parsely#readme",
   "devDependencies": {
     "@types/gulp": "^3.8.32",
+    "@types/gulp-nodemon": "0.0.29",
     "@types/gulp-plumber": "0.0.29",
     "@types/gulp-typescript": "0.0.32",
     "gulp": "^3.9.1",
