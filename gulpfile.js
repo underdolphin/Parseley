@@ -37,7 +37,7 @@ gulp.task('tsCompile', () => {
 
 gulp.task('browserify', () => {
     browserify({
-            entries: ['./build/index.js']
+            entries: ['./build/parseley.js']
         })
         .bundle()
         .pipe(source('parseley.min.js'))
