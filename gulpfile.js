@@ -26,7 +26,7 @@ gulp.task('browserify', () => {
             entries: ['./build/index.js']
         })
         .bundle()
-        .pipe(source('lib.min.js'))
+        .pipe(source('parseley.min.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest('./dist/'))
