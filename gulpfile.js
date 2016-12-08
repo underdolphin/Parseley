@@ -20,11 +20,16 @@ const uglify = require('gulp-uglify');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
+const mocha = require('gulp-mocha');
 
 const tsProject = gulpts.createProject('tsconfig.json', {
     typescript: require('typescript'),
-    module: "commonjs",
-    sortOutput: true
+    module: "commonjs"
+});
+
+const testsProject = gulpts.createProject('tsconfig.json', {
+    typescript: require('typescript'),
+    module: "commonjs"
 });
 
 gulp.task('tsCompile', () => {
@@ -46,11 +51,29 @@ gulp.task('browserify', () => {
         .pipe(gulp.dest('./dist/'))
 });
 
-gulp.task('watch', () => {
-    gulp.watch('src/**/*.ts', ['tsCompile']);
-    gulp.watch('build/**/*.js', ['browserify']);
+gulp.task('testify', () => {
+    browserify({
+            entries: ['./build/test/test.js']
+        })
+        .bundle()
+        .pipe(source('testlib.min.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest('./test/'))
 });
 
-gulp.task('default', ['tsCompile', 'browserify'], () => {
+gulp.task('test', () => {
+    return gulp.src(['test/testlib.min.js'])
+        .pipe(mocha({
+            reporter: 'nyan'
+        }));
+})
+
+gulp.task('watch', () => {
+    gulp.watch('src/**/*.ts', ['tsCompile']);
+    gulp.watch('build/**/*.js', ['browserify', 'testify']);
+    gulp.watch('test/testlib.min.js',['test']);
+});
+
+gulp.task('default', ['tsCompile', 'testify', 'browserify'], () => {
     gulp.start('watch')
 });
