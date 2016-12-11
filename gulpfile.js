@@ -71,7 +71,7 @@ gulp.task('test', () => {
 gulp.task('watch', () => {
     gulp.watch('src/**/*.ts', ['tsCompile']);
     gulp.watch('build/**/*.js', ['browserify', 'testify']);
-    gulp.watch('test/testlib.min.js',['test']);
+    gulp.watch('test/testlib.min.js', ['test']);
 });
 
 gulp.task('default', ['tsCompile', 'testify', 'browserify'], () => {
