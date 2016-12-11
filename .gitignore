@@ -37,6 +37,7 @@ jspm_packages
 typings
 
 # Build Registory
+test/**/*.*
 build/**/*.*
 
 # gitkeep
