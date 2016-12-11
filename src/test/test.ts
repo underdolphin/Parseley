@@ -1,4 +1,3 @@
-"use strinct"
 import { Parseley } from '../parseley';
 import * as chai from 'chai';
 const assert = chai.assert;
