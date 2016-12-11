@@ -38,8 +38,6 @@ typings
 
 # Build Registory
 build/**/*.*
-dist/**/*.*
-test/**/*.*
 
 # gitkeep
 !.gitkeep
