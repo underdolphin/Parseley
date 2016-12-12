@@ -14,16 +14,49 @@
 
 export class Parseley {
     public success = false;
-    public result = [''];
+    public result?: string[] = [''];
     public newPosition = 0;
     public targetString = '';
 
+    /**
+     * Parse function
+     */
     public parse(str: string, pos: number) {
-        const parseley = new Parseley();
+        const parseley = this;
         parseley.success = (str === '') ? false : true;
-        parseley.result = [''];
+        parseley.result = null;
         parseley.newPosition = 0;
         parseley.targetString = str;
         return parseley;
+    }
+
+    /**
+     * Function to generate parser for simple string
+     */
+    public token(token: string) {
+        const parseley = this;
+        if (token.length === 0) {
+            parseley.success = false;
+            parseley.result = null;
+            parseley.newPosition = 0;
+            return parseley;
+        }
+
+        if (parseley.targetString.substr(parseley.newPosition, token.length) === token) {
+            parseley.success = true;
+            if (parseley.result === null) {
+                parseley.result = [token];
+            } else {
+                parseley.result.push(token);
+            }
+            parseley.newPosition += token.length;
+            return parseley;
+        } else {
+            console.log(parseley.success);
+            parseley.success = false;
+            parseley.result = null;
+            parseley.newPosition = 0;
+            return parseley;
+        }
     }
 }
