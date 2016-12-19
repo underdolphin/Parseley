@@ -12,21 +12,21 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-import { Parseley } from '../parseley';
+import { Parseley as $ } from '../parseley';
 import * as chai from 'chai';
 const assert = chai.assert;
 
-describe('parse function', () => {
-    let parseley: Parseley = null;
+describe('constructor', () => {
+    let parseley: $ = null;
     it('when inner variant setup, add a target string and position.', () => {
-        parseley = new Parseley().parse('parse string', 0);
+        parseley = new $('parse string', 0);
         assert.strictEqual(parseley.success, true);
         assert.strictEqual(parseley.result, null);
         assert.strictEqual(parseley.newPosition, 0);
         assert.strictEqual(parseley.targetString, 'parse string');
     });
     it('Inner variant no setup.', () => {
-        parseley = new Parseley().parse('', 0);
+        parseley = new $('', 0);
         assert.strictEqual(parseley.success, false);
         assert.strictEqual(parseley.result, null);
         assert.strictEqual(parseley.newPosition, 0);
@@ -36,14 +36,14 @@ describe('parse function', () => {
 
 describe('Function to generate parser for simple string', () => {
     it('Setup single target', () => {
-        const parseley: Parseley = new Parseley().parse('foobar', 0).token('foobar');
+        const parseley: $ = new $('foobar', 0).token('foobar');
         assert.strictEqual(parseley.success, true);
         assert.strictEqual(parseley.result.pop(), 'foobar');
         assert.strictEqual(parseley.newPosition, 6);
         assert.strictEqual(parseley.targetString, 'foobar');
     });
     it('not setup target', () => {
-        const parseley: Parseley = new Parseley().parse('foobar', 0).token('');
+        const parseley: $ = new $('foobar', 0).token('');
         assert.strictEqual(parseley.success, false);
         assert.strictEqual(parseley.result, null);
         assert.strictEqual(parseley.newPosition, 0);

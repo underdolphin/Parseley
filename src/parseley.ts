@@ -18,10 +18,7 @@ export class Parseley {
     public newPosition = 0;
     public targetString = '';
 
-    /**
-     * Parse function
-     */
-    public parse(str: string, pos: number) {
+    public constructor(str: string, pos: number) {
         const parseley = this;
         parseley.success = (str === '') ? false : true;
         parseley.result = null;
